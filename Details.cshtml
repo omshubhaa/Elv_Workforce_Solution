@@ -1,0 +1,15 @@
+﻿@model Job
+
+<h2>@Model.Title</h2>
+<p><strong>Company:</strong> @Model.Company</p>
+<p><strong>Location:</strong> @Model.Location</p>
+<p><strong>Type:</strong> @Model.JobType</p>
+<p><strong>Salary:</strong> $@Model.Salary</p>
+<p><strong>Description:</strong> @Model.Description</p>
+
+<form asp-action="Apply" method="post">
+    <input type="hidden" name="jobId" value="@Model.Id" />
+    <button type="submit" class="btn btn-success">Apply Now</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Back to Jobs</a>
